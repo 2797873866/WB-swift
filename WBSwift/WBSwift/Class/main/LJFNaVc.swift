@@ -13,7 +13,7 @@ class LJFNaVc: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationBar.tintColor = UIColor.orange
     }
 
     override func didReceiveMemoryWarning() {

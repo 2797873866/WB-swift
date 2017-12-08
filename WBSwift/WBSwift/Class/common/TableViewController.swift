@@ -55,4 +55,14 @@ extension UIButton{
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
+    
+    convenience init (image:String,imageBack:String,targer:Any,action:Selector){
+        self.init()
+        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
+        setBackgroundImage(UIImage(named:"tabbar_compose_button" + "_highlighted"), for: .highlighted)
+        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
+        setImage(UIImage(named:"tabbar_compose_icon_add"  + "_highlighted"), for: .highlighted)
+        addTarget(targer, action: action, for: .touchUpInside)
+        sizeToFit()
+    }
 }

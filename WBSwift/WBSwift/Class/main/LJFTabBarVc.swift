@@ -9,16 +9,7 @@ import UIKit
 
 class LJFTabBarVc: UITabBarController {
     
-    lazy var addBtn : UIButton = {
-        let  tempBtn = UIButton()
-        tempBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        tempBtn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: .highlighted)
-        tempBtn.setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
-        tempBtn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), for: .highlighted)
-        tempBtn.sizeToFit()
-        
-        return tempBtn
-    }()
+    lazy var addBtn : UIButton = UIButton(image: "tabbar_compose_button", imageBack: "tabbar_compose_icon_add", targer: self, action: #selector((LJFTabBarVc.selectAddVc)))
     
     
     override func viewDidLoad() {
@@ -92,4 +83,12 @@ class LJFTabBarVc: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+}
+
+//add target
+extension LJFTabBarVc{
+    
+    @objc func selectAddVc(){
+        self.selectedIndex = 2
+    }
 }

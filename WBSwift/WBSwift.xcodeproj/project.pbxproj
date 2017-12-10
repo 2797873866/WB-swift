@@ -25,6 +25,8 @@
 		3E9311891FD9558900BFFC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9311881FD9558900BFFC2E /* Assets.xcassets */; };
 		3E93118C1FD9558900BFFC2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E93118A1FD9558900BFFC2E /* LaunchScreen.storyboard */; };
 		3EDFAC281FDCFF48007DE07C /* LJFUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFAC271FDCFF48007DE07C /* LJFUserDefault.swift */; };
+		3EDFAC2B1FDD2C21007DE07C /* LJFPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFAC2A1FDD2C21007DE07C /* LJFPopVC.swift */; };
+		3EDFAC2D1FDD382E007DE07C /* LJFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDFAC2C1FDD382E007DE07C /* LJFButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		3E93118B1FD9558900BFFC2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E93118D1FD9558900BFFC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EDFAC271FDCFF48007DE07C /* LJFUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFUserDefault.swift; sourceTree = "<group>"; };
+		3EDFAC2A1FDD2C21007DE07C /* LJFPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFPopVC.swift; sourceTree = "<group>"; };
+		3EDFAC2C1FDD382E007DE07C /* LJFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		3E3BE87C1FD985D500822BFF /* common */ = {
 			isa = PBXGroup;
 			children = (
+				3EDFAC2C1FDD382E007DE07C /* LJFButton.swift */,
 				3E3CFC331FDA91C500B7A923 /* UIButton+extension.swift */,
 				3EDFAC271FDCFF48007DE07C /* LJFUserDefault.swift */,
 			);
@@ -181,6 +186,7 @@
 		3E9311991FD9565500BFFC2E /* home */ = {
 			isa = PBXGroup;
 			children = (
+				3EDFAC291FDD2BE9007DE07C /* popVc */,
 				3E3BE8881FD9871900822BFF /* LJFHomeVc.swift */,
 			);
 			path = home;
@@ -192,6 +198,14 @@
 				3E3BE8861FD986FC00822BFF /* LJFDiscoverVc.swift */,
 			);
 			path = discover;
+			sourceTree = "<group>";
+		};
+		3EDFAC291FDD2BE9007DE07C /* popVc */ = {
+			isa = PBXGroup;
+			children = (
+				3EDFAC2A1FDD2C21007DE07C /* LJFPopVC.swift */,
+			);
+			path = popVc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDFAC2D1FDD382E007DE07C /* LJFButton.swift in Sources */,
 				3E3BE8831FD9865500822BFF /* LJFNaVc.swift in Sources */,
 				3E3BE8891FD9871900822BFF /* LJFHomeVc.swift in Sources */,
 				3E3CFC341FDA91C500B7A923 /* UIButton+extension.swift in Sources */,
+				3EDFAC2B1FDD2C21007DE07C /* LJFPopVC.swift in Sources */,
 				3E3BE87B1FD9859300822BFF /* LJFAddVc.swift in Sources */,
 				3E3BE88B1FD9873C00822BFF /* LJFMeVc.swift in Sources */,
 				3E3BE87F1FD985FD00822BFF /* LJFBaseVc.swift in Sources */,

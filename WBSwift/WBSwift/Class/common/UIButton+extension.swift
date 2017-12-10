@@ -5,9 +5,12 @@
 //  Created by ljf on 2017/12/8.
 //  Copyright © 2017年 LJF. All rights reserved.
 //
+
+
+
 import UIKit
 
-extension UIButton{
+extension UIButton{    
     
     // convenience : 便利,使用convenience修饰的构造函数叫做便利构造函数
     // 遍历构造函数通常用在对系统的类进行构造函数的扩充时使用
@@ -22,10 +25,10 @@ extension UIButton{
     
         setTitle(title, for:.normal)
         setTitle(titleH, for:.highlighted)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: .highlighted)
-        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
-        setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        setBackgroundImage(UIImage(named:image), for: .normal)
+        setBackgroundImage(UIImage(named:image + "_highlighted"), for: .highlighted)
+        setImage(UIImage(named:imageH), for: .normal)
+        setImage(UIImage(named:imageH + "_highlighted"), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
@@ -39,11 +42,13 @@ extension UIButton{
         
         setTitle(title, for:.normal)
         setTitle(title, for:.highlighted)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: .highlighted)
-        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
-        setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), for: .highlighted)
+        setImage(UIImage(named:image), for: .normal)
+        setImage(UIImage(named:imageH), for: .highlighted)
+        setBackgroundImage(UIImage(named:imageBack), for: .normal)
+        setBackgroundImage(UIImage(named:imagebackH), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
+        setTitleColor(UIColor.black, for: .normal)
+        setTitleColor(UIColor.black, for: .highlighted)
         sizeToFit()
     }
     
@@ -52,21 +57,22 @@ extension UIButton{
         
         setTitle(title, for:.normal)
         setTitle(title, for:.highlighted)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .highlighted)
-        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
-        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .highlighted)
+        setBackgroundImage(UIImage(named:image), for: .normal)
+        setBackgroundImage(UIImage(named:image), for: .highlighted)
+        setImage(UIImage(named:imageBack), for: .normal)
+        setImage(UIImage(named:imageBack), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
     
     convenience init (image:String,imageBack:String,targer:Any,action:Selector){
         self.init()
-        setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: .normal)
-        setBackgroundImage(UIImage(named:"tabbar_compose_button" + "_highlighted"), for: .highlighted)
-        setImage(UIImage(named:"tabbar_compose_icon_add"), for: .normal)
-        setImage(UIImage(named:"tabbar_compose_icon_add"  + "_highlighted"), for: .highlighted)
+        setBackgroundImage(UIImage(named:image), for: .normal)
+        setBackgroundImage(UIImage(named:image + "_highlighted"), for: .highlighted)
+        setImage(UIImage(named:imageBack), for: .normal)
+        setImage(UIImage(named:imageBack  + "_highlighted"), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
+
 }

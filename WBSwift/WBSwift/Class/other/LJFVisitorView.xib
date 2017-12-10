@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LJFVisitorView" customModule="WBSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="kaL-ln-PGj">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                    <color key="backgroundColor" red="0.97008756204770052" green="0.96038676772046294" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="500" id="uoD-Xx-WsO"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="Iac-ja-g4L">
+                    <rect key="frame" x="99.5" y="240" width="175" height="175"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="5vK-kq-JuX">
+                    <rect key="frame" x="129" y="290" width="117" height="117"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="117" id="JWf-2W-77y"/>
+                        <constraint firstAttribute="height" constant="117" id="Lg5-KI-eoX"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heheheheehehe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onn-zw-UAT">
+                    <rect key="frame" x="125.5" y="423" width="123.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-0W-UUJ">
+                    <rect key="frame" x="68.5" y="449" width="38" height="30"/>
+                    <state key="normal" title=" login">
+                        <color key="titleColor" red="1" green="0.7148385116" blue="0.1076220712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfk-sS-Wca">
+                    <rect key="frame" x="261" y="449" width="53" height="30"/>
+                    <state key="normal" title="register">
+                        <color key="titleColor" red="1" green="0.7148385116" blue="0.1076220712" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kaL-ln-PGj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3XG-zT-X5m"/>
+                <constraint firstItem="fXT-0W-UUJ" firstAttribute="top" secondItem="Iac-ja-g4L" secondAttribute="bottom" constant="34" id="5H1-oU-8W5"/>
+                <constraint firstItem="5vK-kq-JuX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CUe-zM-T4h"/>
+                <constraint firstItem="fXT-0W-UUJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-100" id="MMh-39-vcb"/>
+                <constraint firstItem="5vK-kq-JuX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="290" id="OhE-uH-c2s"/>
+                <constraint firstItem="Onn-zw-UAT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Onr-nh-OUY"/>
+                <constraint firstItem="hfk-sS-Wca" firstAttribute="centerY" secondItem="fXT-0W-UUJ" secondAttribute="centerY" id="Y9C-ke-FgN"/>
+                <constraint firstAttribute="trailing" secondItem="kaL-ln-PGj" secondAttribute="trailing" id="h2i-Kr-75c"/>
+                <constraint firstItem="kaL-ln-PGj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="h8Q-CS-cbU"/>
+                <constraint firstItem="Onn-zw-UAT" firstAttribute="top" secondItem="Iac-ja-g4L" secondAttribute="bottom" constant="8" id="l4i-eM-6Cj"/>
+                <constraint firstItem="Iac-ja-g4L" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="l64-ZM-nYf"/>
+                <constraint firstItem="hfk-sS-Wca" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="100" id="vnQ-dV-L8w"/>
+                <constraint firstItem="Iac-ja-g4L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="240" id="xJl-VO-eUY"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="5vK-kq-JuX" id="OaL-VO-vcz"/>
+                <outlet property="infoLable" destination="Onn-zw-UAT" id="tiE-sj-rPT"/>
+                <outlet property="loginButton" destination="fXT-0W-UUJ" id="jr2-tq-51y"/>
+                <outlet property="rigesterButton" destination="hfk-sS-Wca" id="4sb-u2-nbO"/>
+                <outlet property="rotationImageView" destination="Iac-ja-g4L" id="4cw-XD-qmD"/>
+            </connections>
+            <point key="canvasLocation" x="-89.5" y="61.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+        <image name="visitordiscover_feed_mask_smallicon" width="175" height="175"/>
+    </resources>
+</document>

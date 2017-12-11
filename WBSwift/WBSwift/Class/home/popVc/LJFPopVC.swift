@@ -14,12 +14,11 @@ class LJFPopVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.red.withAlphaComponent(0.3)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
         
     }
 

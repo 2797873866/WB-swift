@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LJFPopVC" customModule="WBSwift" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="iN0-l3-epB" id="mTf-xF-CrY"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7jl-zf-PWD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,7 +38,7 @@
                 <constraint firstItem="1TR-9Z-zY5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="wix-1W-4Y9"/>
                 <constraint firstAttribute="trailing" secondItem="qQe-2w-W28" secondAttribute="trailing" id="xd5-3M-XCa"/>
             </constraints>
-            <point key="canvasLocation" x="25.5" y="51.5"/>
+            <point key="canvasLocation" x="-262" y="17"/>
         </view>
     </objects>
     <resources>

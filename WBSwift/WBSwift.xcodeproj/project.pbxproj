@@ -10,6 +10,7 @@
 		3E15F2D31FDE2C7600DDEA95 /* LJFPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E15F2D01FDE2C7600DDEA95 /* LJFPopView.xib */; };
 		3E15F2D41FDE2C7600DDEA95 /* LJFPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15F2D11FDE2C7600DDEA95 /* LJFPopVC.swift */; };
 		3E15F2D51FDE2C7600DDEA95 /* LJFPresentationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15F2D21FDE2C7600DDEA95 /* LJFPresentationVC.swift */; };
+		3E1FC4B61FDE6A7C00747A7F /* LJFPopObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */; };
 		3E3BE87B1FD9859300822BFF /* LJFAddVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */; };
 		3E3BE87F1FD985FD00822BFF /* LJFBaseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */; };
 		3E3BE8811FD9862C00822BFF /* LJFTabBarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */; };
@@ -35,6 +36,7 @@
 		3E15F2D01FDE2C7600DDEA95 /* LJFPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJFPopView.xib; sourceTree = "<group>"; };
 		3E15F2D11FDE2C7600DDEA95 /* LJFPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJFPopVC.swift; sourceTree = "<group>"; };
 		3E15F2D21FDE2C7600DDEA95 /* LJFPresentationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJFPresentationVC.swift; sourceTree = "<group>"; };
+		3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFPopObjc.swift; sourceTree = "<group>"; };
 		3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFAddVc.swift; sourceTree = "<group>"; };
 		3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFBaseVc.swift; sourceTree = "<group>"; };
 		3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFTabBarVc.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				3E15F2D21FDE2C7600DDEA95 /* LJFPresentationVC.swift */,
 				3E15F2D11FDE2C7600DDEA95 /* LJFPopVC.swift */,
 				3E15F2D01FDE2C7600DDEA95 /* LJFPopView.xib */,
+				3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */,
 			);
 			path = popVc;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				3E3BE8831FD9865500822BFF /* LJFNaVc.swift in Sources */,
 				3E3BE8891FD9871900822BFF /* LJFHomeVc.swift in Sources */,
 				3E15F2D41FDE2C7600DDEA95 /* LJFPopVC.swift in Sources */,
+				3E1FC4B61FDE6A7C00747A7F /* LJFPopObjc.swift in Sources */,
 				3E3CFC341FDA91C500B7A923 /* UIButton+extension.swift in Sources */,
 				3E3BE87B1FD9859300822BFF /* LJFAddVc.swift in Sources */,
 				3E3BE88B1FD9873C00822BFF /* LJFMeVc.swift in Sources */,

@@ -1,0 +1,6 @@
+framework module Pods_WBSwift {
+  umbrella header "Pods-WBSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -43,12 +43,12 @@ extension UIButton{
         setTitle(title, for:.normal)
         setTitle(title, for:.highlighted)
         setImage(UIImage(named:image), for: .normal)
-        setImage(UIImage(named:imageH), for: .highlighted)
+        setImage(UIImage(named:imageH), for: .selected)
         setBackgroundImage(UIImage(named:imageBack), for: .normal)
-        setBackgroundImage(UIImage(named:imagebackH), for: .highlighted)
+        setBackgroundImage(UIImage(named:imagebackH), for: .selected)
         addTarget(targer, action: action, for: .touchUpInside)
         setTitleColor(UIColor.black, for: .normal)
-        setTitleColor(UIColor.black, for: .highlighted)
+        setTitleColor(UIColor.black, for: .selected)
         sizeToFit()
     }
     

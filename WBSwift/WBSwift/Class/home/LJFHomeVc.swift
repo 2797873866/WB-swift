@@ -51,9 +51,24 @@ extension LJFHomeVc {
     //中间
     @objc func titleAction ()  {
         
+        // 1.创建弹出的控制器
+        let popVc = LJFPopVC()
+        // 2.设置控制器的modal样式
+        popVc.modalPresentationStyle = .custom
+        // 3.设置转场的代理
+//        popVc.transitioningDelegate = self;
+        //4 弹出控制器
+        present(popVc, animated: true, completion: nil)
     }
-    
 }
+//
+//extension LJFHomeVc:UIViewControllerTransitioningDelegate {
+//   
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        
+//        return LJFPresentationVC(presentedViewController: presented, presenting: presenting) as? UIViewControllerAnimatedTransitioning
+//    }
+//}
 
 
 

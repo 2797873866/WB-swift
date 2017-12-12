@@ -22,13 +22,38 @@ extension UIButton{
      */
     convenience init (title:String,titleH:String,image:String,imageH:String,imageBack:String,imagebackH:String,targer:Any,action:Selector){
         self.init()
-    
+     
+        var PtitleH = titleH
+        if PtitleH == "" {
+            PtitleH = title
+        }
+        
+        var PImage = image
+        if PImage == "" {
+            PImage = "hhhh"
+        }
+        
+        var PImageH = imageH
+        if PImageH == "" {
+            PImageH = "hhhh"
+        }
+        
+        var PimageBack = imageBack
+        if PimageBack == "" {
+            PimageBack = "hhhh"
+        }
+        
+        var PimagebackH = imagebackH
+        if PimagebackH == "" {
+            PimagebackH = "hhhh"
+        }
+        
         setTitle(title, for:.normal)
-        setTitle(titleH, for:.highlighted)
-        setBackgroundImage(UIImage(named:image), for: .normal)
-        setBackgroundImage(UIImage(named:image + "_highlighted"), for: .highlighted)
-        setImage(UIImage(named:imageH), for: .normal)
-        setImage(UIImage(named:imageH + "_highlighted"), for: .highlighted)
+        setTitle(PtitleH, for:.highlighted)
+        setBackgroundImage(UIImage(named:PimageBack), for: .normal)
+        setBackgroundImage(UIImage(named:PimagebackH), for: .highlighted)
+        setImage(UIImage(named:PImage), for: .normal)
+        setImage(UIImage(named:PImageH), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
@@ -39,13 +64,33 @@ extension UIButton{
     // 如果在private前面加上@objc,那么该方法依然会被添加到方法列表中
     convenience init (title:String,image:String,imageH:String,imageBack:String,imagebackH:String,targer:Any,action:Selector){
         self.init()
+
+        var PImage = image
+        if PImage == "" {
+            PImage = "hhhh"
+        }
+        
+        var PImageH = imageH
+        if PImageH == "" {
+            PImageH = "hhhh"
+        }
+        
+        var PimageBack = imageBack
+        if PimageBack == "" {
+            PimageBack = "hhhh"
+        }
+        
+        var PimagebackH = imagebackH
+        if PimagebackH == "" {
+            PimagebackH = "hhhh"
+        }
         
         setTitle(title, for:.normal)
         setTitle(title, for:.highlighted)
-        setImage(UIImage(named:image), for: .normal)
-        setImage(UIImage(named:imageH), for: .selected)
-        setBackgroundImage(UIImage(named:imageBack), for: .normal)
-        setBackgroundImage(UIImage(named:imagebackH), for: .selected)
+        setImage(UIImage(named:PImage), for: .normal)
+        setImage(UIImage(named:PImageH), for: .selected)
+        setBackgroundImage(UIImage(named:PimageBack), for: .normal)
+        setBackgroundImage(UIImage(named:PimagebackH), for: .selected)
         addTarget(targer, action: action, for: .touchUpInside)
         setTitleColor(UIColor.black, for: .normal)
         setTitleColor(UIColor.black, for: .selected)
@@ -55,22 +100,43 @@ extension UIButton{
     convenience init (title:String,image:String,imageBack:String,targer:Any,action:Selector){
         self.init()
         
+        var PImage = image
+        if PImage == "" {
+            PImage = "hhhh"
+        }
+        
+        var PimageBack = imageBack
+        if PimageBack == "" {
+            PimageBack = "hhhh"
+        }
+        
         setTitle(title, for:.normal)
         setTitle(title, for:.highlighted)
-        setBackgroundImage(UIImage(named:image), for: .normal)
-        setBackgroundImage(UIImage(named:image), for: .highlighted)
-        setImage(UIImage(named:imageBack), for: .normal)
-        setImage(UIImage(named:imageBack), for: .highlighted)
+        setBackgroundImage(UIImage(named:PImage), for: .normal)
+        setBackgroundImage(UIImage(named:PImage), for: .highlighted)
+        setImage(UIImage(named:PimageBack), for: .normal)
+        setImage(UIImage(named:PimageBack), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }
     
     convenience init (image:String,imageBack:String,targer:Any,action:Selector){
         self.init()
-        setBackgroundImage(UIImage(named:image), for: .normal)
-        setBackgroundImage(UIImage(named:image + "_highlighted"), for: .highlighted)
-        setImage(UIImage(named:imageBack), for: .normal)
-        setImage(UIImage(named:imageBack  + "_highlighted"), for: .highlighted)
+        var PImage = image
+        
+        if PImage == "" {
+            PImage = "hhhh"
+        }
+        
+        var PimageBack = imageBack
+        if PimageBack == "" {
+            PimageBack = "hhhh"
+        }
+        
+        setBackgroundImage(UIImage(named:PImage), for: .normal)
+        setBackgroundImage(UIImage(named:PImage + "_highlighted"), for: .highlighted)
+        setImage(UIImage(named:PimageBack), for: .normal)
+        setImage(UIImage(named:PimageBack  + "_highlighted"), for: .highlighted)
         addTarget(targer, action: action, for: .touchUpInside)
         sizeToFit()
     }

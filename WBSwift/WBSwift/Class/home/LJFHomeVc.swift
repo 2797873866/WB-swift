@@ -35,6 +35,25 @@ class LJFHomeVc: LJFBaseVc {
 
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let url = "http://httpbin.org/get"
+       let url = "http://httpbin.org/headers"
+
+        LJFNetTools.get(url: url, parm: [:], { (result) in
+            print(result ?? "dada" )
+        }) { (error) in
+            print(error ?? "dada"  )
+        }
+//
+//         let url2 = "https://now.httpbin.org/"
+//
+//        LJFNetTools.get(url: url2, parm: [:], { (result) in
+//            print(result ?? "dada"  )
+//        }) { (error) in
+//            print(error ?? "dada"  )
+//        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

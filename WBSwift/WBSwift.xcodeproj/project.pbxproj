@@ -11,6 +11,7 @@
 		3E15F2D41FDE2C7600DDEA95 /* LJFPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15F2D11FDE2C7600DDEA95 /* LJFPopVC.swift */; };
 		3E15F2D51FDE2C7600DDEA95 /* LJFPresentationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E15F2D21FDE2C7600DDEA95 /* LJFPresentationVC.swift */; };
 		3E1FC4B61FDE6A7C00747A7F /* LJFPopObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */; };
+		3E294ED71FDE762B00E8D406 /* LJFNetTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */; };
 		3E3BE87B1FD9859300822BFF /* LJFAddVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */; };
 		3E3BE87F1FD985FD00822BFF /* LJFBaseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */; };
 		3E3BE8811FD9862C00822BFF /* LJFTabBarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */; };
@@ -38,6 +39,7 @@
 		3E15F2D11FDE2C7600DDEA95 /* LJFPopVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJFPopVC.swift; sourceTree = "<group>"; };
 		3E15F2D21FDE2C7600DDEA95 /* LJFPresentationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJFPresentationVC.swift; sourceTree = "<group>"; };
 		3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFPopObjc.swift; sourceTree = "<group>"; };
+		3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFNetTools.swift; sourceTree = "<group>"; };
 		3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFAddVc.swift; sourceTree = "<group>"; };
 		3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFBaseVc.swift; sourceTree = "<group>"; };
 		3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFTabBarVc.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				3EDFAC2C1FDD382E007DE07C /* LJFButton.swift */,
 				3E3CFC331FDA91C500B7A923 /* UIButton+extension.swift */,
 				3EDFAC271FDCFF48007DE07C /* LJFUserDefault.swift */,
+				3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				3E3BE8871FD986FC00822BFF /* LJFDiscoverVc.swift in Sources */,
 				3E15F2D51FDE2C7600DDEA95 /* LJFPresentationVC.swift in Sources */,
 				3E3BE88D1FD9876900822BFF /* LJFMessageVc.swift in Sources */,
+				3E294ED71FDE762B00E8D406 /* LJFNetTools.swift in Sources */,
 				3E3BE8811FD9862C00822BFF /* LJFTabBarVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

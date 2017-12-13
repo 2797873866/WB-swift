@@ -25,22 +25,40 @@ class LJFVisitorView: UIView {
         
         let VisitorView = Bundle.main.loadNibNamed("LJFVisitorView", owner: nil, options: nil)!.last as! LJFVisitorView
         
-        VisitorView.loginButton.addTarget(self, action: #selector(LJFVisitorView.loginAction), for: UIControlEvents.touchUpInside)
-        VisitorView.rigesterButton.addTarget(self, action: #selector(LJFVisitorView.regesterAction), for: UIControlEvents.touchUpInside)
         VisitorView.addAnimation()
         return VisitorView
     }
+
+  
 }
 
 //add action
 extension LJFVisitorView{
-    @objc func loginAction() {
+    
+    @IBAction func loginAction(_ sender: UIButton) {
+       
+        getVC().navigationController?.pushViewController(LJFAuthoriseVc(), animated: true)
+        
+    }
+    @IBAction func regesterAction(_ sender: UIButton) {
         
     }
     
-    @objc func regesterAction() {
+    //获取显示的控制器
+    func getVC() -> UIViewController {
         
+        let Vc = UIApplication.shared.keyWindow!.rootViewController!
+        
+        if Vc.isKind(of: LJFTabBarVc.self){
+            let Vc = Vc as! LJFTabBarVc
+            let naVc = Vc.selectedViewController as! LJFNaVc
+            return naVc.visibleViewController!
+        }else{
+            let naVc = Vc as! LJFNaVc
+            return naVc.presentingViewController!
+        }
     }
+    
 }
 
 

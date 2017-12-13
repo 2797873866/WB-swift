@@ -35,6 +35,24 @@ class LJFPresentationVC:UIPresentationController {
     
 
     @objc func tapGesture() {
+        
+        getVC()
         presentedViewController.dismiss(animated: true, completion: nil)
     }
+    
+    //返回显示的控制器
+    func getVC() -> UIViewController {
+        
+        let Vc = UIApplication.shared.keyWindow!.rootViewController!
+        
+        if Vc.isKind(of: LJFTabBarVc.self){
+            let Vc = Vc as! LJFTabBarVc
+            let naVc = Vc.selectedViewController as! LJFNaVc
+            return naVc.visibleViewController!
+        }else{
+            let naVc = Vc as! LJFNaVc
+            return naVc.presentingViewController!
+        }
+    }
+    
 }

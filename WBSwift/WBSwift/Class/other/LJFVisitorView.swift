@@ -37,8 +37,9 @@ extension LJFVisitorView{
     
     @IBAction func loginAction(_ sender: UIButton) {
        
-        getVC().navigationController?.pushViewController(LJFAuthoriseVc(), animated: true)
-        
+        let authorVc = LJFAuthoriseVc()
+        authorVc.urlStr = authorRul
+        getVC().navigationController?.pushViewController(authorVc, animated: true)
     }
     @IBAction func regesterAction(_ sender: UIButton) {
         

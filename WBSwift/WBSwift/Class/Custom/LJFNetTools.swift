@@ -29,7 +29,8 @@ import AFNetworking
     private let manager = { () -> AFHTTPSessionManager in
     let manager =  AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
-        manager.requestSerializer = AFHTTPRequestSerializer.init()
+        manager.responseSerializer = AFHTTPResponseSerializer.init()
+
         return manager
     }()
     

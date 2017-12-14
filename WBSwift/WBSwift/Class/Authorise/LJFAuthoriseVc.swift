@@ -84,12 +84,18 @@ extension LJFAuthoriseVc: WKNavigationDelegate{
             return
         }
        
-        
         // 4.将code截取出来
         let code = urlStr.components(separatedBy: "code=").last!
         
         print(code)
         
+        //保存用户 受权 code
+        UserDefaults.standard.set(code, forKey: "code")
+        LJFUserInfo.sheard.code = code
+        LJFUserInfo.save()
+        
+        webView.stopLoading()
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

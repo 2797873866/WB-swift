@@ -25,6 +25,7 @@
 		3E3CFC301FDA76CC00B7A923 /* LJFVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CFC2F1FDA76CC00B7A923 /* LJFVisitorView.swift */; };
 		3E3CFC321FDA76E600B7A923 /* LJFVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3CFC311FDA76E600B7A923 /* LJFVisitorView.xib */; };
 		3E3CFC341FDA91C500B7A923 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3CFC331FDA91C500B7A923 /* UIButton+extension.swift */; };
+		3E410FAB1FE253DB001F9A43 /* LJFUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E410FAA1FE253DB001F9A43 /* LJFUserInfo.swift */; };
 		3E651D2D1FDA3BBD00AFEDF5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E651D2C1FDA3BBD00AFEDF5 /* libz.tbd */; };
 		3E9311821FD9558900BFFC2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9311811FD9558900BFFC2E /* AppDelegate.swift */; };
 		3E9311871FD9558900BFFC2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9311851FD9558900BFFC2E /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		3E3CFC2F1FDA76CC00B7A923 /* LJFVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFVisitorView.swift; sourceTree = "<group>"; };
 		3E3CFC311FDA76E600B7A923 /* LJFVisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LJFVisitorView.xib; sourceTree = "<group>"; };
 		3E3CFC331FDA91C500B7A923 /* UIButton+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		3E410FAA1FE253DB001F9A43 /* LJFUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFUserInfo.swift; sourceTree = "<group>"; };
 		3E651D2C1FDA3BBD00AFEDF5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3E93117E1FD9558900BFFC2E /* WBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9311811FD9558900BFFC2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				3EDFAC271FDCFF48007DE07C /* LJFUserDefault.swift */,
 				3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */,
 				3EDFAC2C1FDD382E007DE07C /* LJFButton.swift */,
+				3E410FAA1FE253DB001F9A43 /* LJFUserInfo.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				3E3CFC301FDA76CC00B7A923 /* LJFVisitorView.swift in Sources */,
 				3E3BE8871FD986FC00822BFF /* LJFDiscoverVc.swift in Sources */,
 				3E15F2D51FDE2C7600DDEA95 /* LJFPresentationVC.swift in Sources */,
+				3E410FAB1FE253DB001F9A43 /* LJFUserInfo.swift in Sources */,
 				3E1C7F7E1FE127C20032C46A /* conste.swift in Sources */,
 				3E3BE88D1FD9876900822BFF /* LJFMessageVc.swift in Sources */,
 				3E294ED71FDE762B00E8D406 /* LJFNetTools.swift in Sources */,

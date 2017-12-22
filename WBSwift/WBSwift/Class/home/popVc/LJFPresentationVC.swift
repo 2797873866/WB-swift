@@ -36,7 +36,6 @@ class LJFPresentationVC:UIPresentationController {
 
     @objc func tapGesture() {
         
-        getVC()
         presentedViewController.dismiss(animated: true, completion: nil)
     }
     

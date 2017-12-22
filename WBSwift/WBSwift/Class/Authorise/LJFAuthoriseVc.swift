@@ -94,14 +94,38 @@ extension LJFAuthoriseVc: WKNavigationDelegate{
         LJFUserInfo.sheard.code = code
         LJFUserInfo.save()
         
+        //获取authToKen
+        getAuthToken(authCode: code)
+        
         webView.stopLoading()
         self.navigationController?.popViewController(animated: true)
     }
+    
+    //获取受权accessToken
+    func getAuthToken(authCode:String) {
+        let pram = ["client_id":appKey,"client_secret":appSecret,"grant_type":"authorization_code","code":authCode,"redirect_uri":"https://test.com"]
+        
+        LJFNetTools.post(url: URLAccessToKen, parm: pram, { (resutl) in
+            if resutl == nil {
+                return
+            }
+            
+            if let dict : NSDictionary = resutl as? NSDictionary {
+                
+                LJFUserInfo.sheard.access_token = dict.object(forKey: "access_token") as! String
+                LJFUserInfo.save()
+            }
+        }) { (error) in
+            print(error ?? "error")
+        }
+        
+    }
 }
 
+
+
+
 extension LJFAuthoriseVc: WKUIDelegate{
-    
-    
-    
+
     
 }

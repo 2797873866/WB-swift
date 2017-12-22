@@ -10,15 +10,30 @@ import UIKit
 
 class LJFUserInfo: NSObject , NSCoding{
 
+    //重写 description oc是重写description方法 swift 是重写description属性
+    override var description: String {
+        
+    return "description"
+    }
     
     //名字
- public   var name : String = String()
+    public   var name : String = String()
     //帐号
- public   var id : String = String()
+    public   var id : String = String()
     //受权code
- public   var code : String = String()
+    public   var code : String = String()
     // 是否登录
- public  var isLogin : Bool = false
+    public  var isLogin : Bool = false
+    
+    
+    //受权相关
+    //access_token
+    public   var access_token : String = String()
+    //access_token的生命周期，单位是秒数。
+    public  var expires_in : TimeInterval = TimeInterval()
+    //授权用户的UID，
+    public  var uid : Double = Double()
+
     
     
     
@@ -65,6 +80,10 @@ class LJFUserInfo: NSObject , NSCoding{
         id = String()
         code = String()
         isLogin = false
+        
+        access_token = String()
+        expires_in = TimeInterval()
+        uid = Double()
     }
     
     
@@ -74,14 +93,59 @@ class LJFUserInfo: NSObject , NSCoding{
         aCoder.encode(id)
         aCoder.encode(code)
         aCoder.encode(isLogin, forKey: "isLogin")
+        
+        aCoder.encode(access_token)
+        aCoder.encode(expires_in)
+        aCoder.encode(uid)
+        
     }
     
     //解档  会覆盖构造函数
     required init?(coder aDecoder: NSCoder) {
-        name = aDecoder.decodeObject() as! String
-        id = aDecoder.decodeObject() as! String
-        code = aDecoder.decodeObject() as! String
-        isLogin = aDecoder.decodeBool(forKey: "isLogin")
+
+        //姓名
+        if let name = aDecoder.decodeObject() {
+            self.name = name as! String
+        }else{
+            self.name = String()
+        }
+        //用户id
+        if let id = aDecoder.decodeObject() {
+            self.id = id as! String
+        }else{
+            self.id = String()
+        }
+        //受权code
+        if let code = aDecoder.decodeObject() {
+            self.code = code as! String
+        }else{
+            self.code = String()
+        } //受权令牌
+        if let isLogin = aDecoder.decodeObject() {
+            self.isLogin = isLogin as! Bool
+        }else{
+            self.isLogin = Bool()
+        }
+        //受权令牌
+        if let access_token = aDecoder.decodeObject() {
+            self.access_token = access_token as! String
+        }else{
+            self.access_token = String()
+        }
+        
+        //有效时间
+        if let expires_in = aDecoder.decodeObject() {
+            self.expires_in = expires_in as! TimeInterval
+        }else{
+            self.expires_in = TimeInterval()
+        }
+        
+        //uid
+        if let uid = aDecoder.decodeObject() {
+            self.uid = uid as! Double
+        }else{
+            self.uid = Double()
+        }
     }
     
     //获取文件路径

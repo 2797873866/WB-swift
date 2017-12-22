@@ -14,6 +14,5 @@ let authorRul = "https://api.weibo.com/oauth2/authorize"
 let appKey = "805904970"
 //回调地址
 let returnUrl = "https://test.com"
-//
-    
-
+//App Secret
+let appSecret = "5ed2b66fccca16e220a5c1dbfd01318f"

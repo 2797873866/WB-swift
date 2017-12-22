@@ -29,7 +29,7 @@ import AFNetworking
     private let manager = { () -> AFHTTPSessionManager in
     let manager =  AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
-        manager.responseSerializer = AFHTTPResponseSerializer.init()
+        manager.responseSerializer = AFJSONResponseSerializer.init()
 
         return manager
     }()
@@ -75,10 +75,13 @@ import AFNetworking
             //post 方法
             manager.post(url, parameters: parm!, progress: { (progre) in
                 
-            }, success: { (task, result) in
+            }, success: { (task, tempResult) in
                 
-            }) { (task, error) in
-                
+                if tempResult != nil{
+                    result(tempResult as AnyObject)
+                }
+            }) { (task, tempError) in
+                    error(tempError as AnyObject)
             }
             
         }else{
@@ -88,9 +91,14 @@ import AFNetworking
             
             manager.uploadTask(with: request, from: data, progress: { (progre) in
                 //输出进度
-                print(progre)
-            }) { (response, result, error) in
+                
+            }) { (response, tempresult, temperror) in
                 //回调
+                if tempresult != nil{
+                    result(result as AnyObject)
+                }else{
+                    error(temperror as AnyObject)
+                }
             }
         }
     }

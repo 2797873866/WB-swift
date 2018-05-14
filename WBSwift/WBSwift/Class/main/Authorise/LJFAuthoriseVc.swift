@@ -35,7 +35,7 @@ class LJFAuthoriseVc: UIViewController {
     
     /// 右边item
     lazy var rightItem: UIBarButtonItem = {
-        let barButton = UIBarButtonItem(title: "添充帐号及密码", style:.plain , target: self, action: Selector(("fillAccoutAndPwb")))
+        let barButton = UIBarButtonItem(title: "添充帐号及密码", style:.plain , target: self, action: #selector(LJFAuthoriseVc.fillAccoutAndPwb))
         return barButton
     }()
     

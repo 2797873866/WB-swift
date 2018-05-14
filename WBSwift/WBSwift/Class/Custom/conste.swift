@@ -16,3 +16,12 @@ let appKey = "805904970"
 let returnUrl = "https://test.com"
 //App Secret
 let appSecret = "5ed2b66fccca16e220a5c1dbfd01318f"
+
+
+
+/// Notification Name
+
+///登录成功的通知
+let NotificationLoginSuccess = "NotificationLoginSuccess"
+///退出登录的通知
+let NotificationLogOut = "NotificationLogOut"

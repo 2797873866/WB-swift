@@ -118,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				3E3CFC2F1FDA76CC00B7A923 /* LJFVisitorView.swift */,
-				3E3CFC311FDA76E600B7A923 /* LJFVisitorView.xib */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -237,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				3EB0C3081FDFDEBD004E0EA8 /* LJFAuthoriseVc.swift */,
+				3E3CFC311FDA76E600B7A923 /* LJFVisitorView.xib */,
 			);
 			path = Authorise;
 			sourceTree = "<group>";

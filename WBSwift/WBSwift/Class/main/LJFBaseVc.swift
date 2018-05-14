@@ -10,6 +10,7 @@ import UIKit
 
 class LJFBaseVc: UIViewController {
 
+    /// 登录的View
         lazy var VisitorView:LJFVisitorView = {
        
         let VisitorView = LJFVisitorView.VisitorView()
@@ -26,6 +27,9 @@ class LJFBaseVc: UIViewController {
 
         view.backgroundColor = UIColor.white
         view.addSubview(VisitorView)
+        NotificationCenter.default.addObserver(self, selector: #selector((LJFBaseVc.logAction(notifi:))), name: NSNotification.Name(rawValue: NotificationLoginSuccess), object: "1")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector((LJFBaseVc.logAction(notifi:))), name: NSNotification.Name(rawValue: NotificationLogOut), object: "0")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +41,13 @@ class LJFBaseVc: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        
-        
     }
     
+    @objc func logAction(notifi:Notification)  {
+        if let info = notifi.userInfo {
+//            if let infoStr = info as String{
+            print(info)
+//            }
+        }
+    }
 }

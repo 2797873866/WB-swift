@@ -18,8 +18,23 @@ class LJFUserInfo: NSObject , NSCoding{
     public   var id : Int?
     ///受权code
     public   var code : String?
-    ///是否登录
-    public   var isLogin : Bool?
+//    ///是否登录
+//    var isLogin :Bool = Bool(){
+//        didSet{
+//            if isLogin {
+//                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess))
+//                /// 登录成功的通知
+//                NotificationCenter.default.post(notifi)
+//            }else{
+//                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLogOut))
+//                /// 退出登录的通知
+//                NotificationCenter.default.post(notifi)
+//            }
+//        }
+//    }
+        ///是否登录
+        var isLogin :Bool = true
+    
     ///受权相关
     public   var access_token : String?
     ///过期时间
@@ -132,11 +147,11 @@ class LJFUserInfo: NSObject , NSCoding{
         ///姓名
         name = aDecoder.decodeObject(forKey: "name") as? String
         ///用户id
-        id = aDecoder.decodeObject(forKey: "id") as? Int
+        id = aDecoder.decodeInteger(forKey: "id") as? Int
         ///受权code
         code = aDecoder.decodeObject(forKey: "code") as? String
         ///受权令牌
-        isLogin = aDecoder.decodeObject(forKey: "isLogin") as? Bool
+        isLogin = (aDecoder.decodeBool(forKey: "isLogin") as? Bool)!
         ///受权令牌
         access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         ///有效时间

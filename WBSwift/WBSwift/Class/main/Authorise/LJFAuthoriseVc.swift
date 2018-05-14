@@ -167,8 +167,8 @@ func getUserInfo() {
     /// 发起网络请求
     LJFNetTools.get(url: url, parm: parm , { (result) in
         if let dict = result as? [String : Any]{
-      LJFUserInfo.userInfoWithDict(dict: dict)
-
+            LJFUserInfo.userInfoWithDict(dict: dict)
+            LJFUserInfo.save()
         }
     }) { (error) in
         print(error as! Error);

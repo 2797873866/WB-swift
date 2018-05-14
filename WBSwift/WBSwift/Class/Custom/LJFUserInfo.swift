@@ -12,8 +12,6 @@ import UIKit
 class LJFUserInfo: NSObject , NSCoding{
     
     //// 定义的成员变量
-    /// 是否登录
-    var isLoing: Bool = false
     ///友好显示名称
     public   var name : String?
     ///帐号
@@ -111,8 +109,7 @@ class LJFUserInfo: NSObject , NSCoding{
         access_token = String()
         expires_in = TimeInterval()
         uid = String()
-        
-
+        LJFUserInfo.save()
     }
     
     

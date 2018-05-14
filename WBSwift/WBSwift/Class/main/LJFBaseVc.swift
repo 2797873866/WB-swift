@@ -10,12 +10,13 @@ import UIKit
 
 class LJFBaseVc: UIViewController {
 
-    lazy var VisitorView:LJFVisitorView = {
+        lazy var VisitorView:LJFVisitorView = {
        
         let VisitorView = LJFVisitorView.VisitorView()
         
         let screenRect = UIScreen.main.bounds
         VisitorView.frame = CGRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
+            
         return VisitorView
     }()
     
@@ -29,7 +30,7 @@ class LJFBaseVc: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
     

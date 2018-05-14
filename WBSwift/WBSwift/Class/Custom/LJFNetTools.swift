@@ -30,7 +30,6 @@ import AFNetworking
     let manager =  AFHTTPSessionManager()
         manager.responseSerializer.acceptableContentTypes?.insert("text/html")
         manager.responseSerializer = AFJSONResponseSerializer.init()
-
         return manager
     }()
     

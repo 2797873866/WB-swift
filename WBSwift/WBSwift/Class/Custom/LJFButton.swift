@@ -22,7 +22,7 @@ class LJFButton: UIButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         switch titelPoint {
         case .Right:
             break
@@ -36,7 +36,6 @@ class LJFButton: UIButton {
             titleLabel?.frame.origin.x = 0
             imageView?.frame.origin.x = 0
             imageView?.frame.origin.y = (titleLabel?.frame.height)! + 5
-
             break
             
         default:

@@ -1,69 +1,94 @@
-//
-//  LJFUserInfo.swift
-//  WBSwift
-//
-//  Created by ljf on 2017/12/14.
-//  Copyright © 2017年 LJF. All rights reserved.
-//  用户信息
+///
+///  LJFUserInfo.swift
+///  WBSwift
+///
+///  Created by ljf on 2017/12/14.
+///  Copyright © 2017年 LJF. All rights reserved.
+///  用户信息
 
 import UIKit
 
+@objcMembers
 class LJFUserInfo: NSObject , NSCoding{
-
-    //重写 description oc是重写description方法 swift 是重写description属性
-    override var description: String {
-        
-    return "description"
+    
+    //// 定义的成员变量
+    ///友好显示名称
+    public   var name : String?
+    ///帐号
+    public   var id : Int?
+    ///受权code
+    public   var code : String?
+    ///是否登录
+    public   var isLogin : Bool?
+    ///受权相关
+    public   var access_token : String?
+    ///过期时间
+    public   var expiresData : Date?
+    ///access_token的生命周期，单位是秒数。
+    public   var expires_in : TimeInterval = TimeInterval(){
+        didSet  {
+            expiresData = Date(timeIntervalSinceNow: expires_in)
+        }
     }
+    ///授权用户的UID，
+    public   var uid : String?
+    ///用户昵称
+    public   var screen_name : String?
+    ///用户所在省级ID
+    public   var province : Int?
+    ///用户所在城市ID
+    public   var city : Int?
+    ///用户所在地
+    public   var location : String?
+    ///用户博客地址
+    public   var url : String?
+    ///用户头像地址（中图），50×50像素
+    public   var profile_image_url : String?
+    ///用户的微博统一URL地址
+    public   var profile_url : String?
+    ///用户的个性化域名
+    public   var domain : String?
+    ///用户的微号
+    public   var weihao : String?
+    ///性别，m：男、f：女、n：未知
+    public   var gender : String?
+    ///    粉丝数
+    public   var followers_count : Int?
+    ///关注数
+    public   var friends_count : Int?
+    ///微博数
+    public   var statuses_count : Int?
+    ///收藏数
+    public   var favourites_count : Int?
+    ///用户创建（注册）时间
+    public   var created_at : String?
+    ///用户头像
+    public   var avatar_large : String?
     
-    //名字
-    public   var name : String = String()
-    //帐号
-    public   var id : String = String()
-    //受权code
-    public   var code : String = String()
-    // 是否登录
-    public  var isLogin : Bool = false
-    
-    
-    //受权相关
-    //access_token
-    public   var access_token : String = String()
-    //access_token的生命周期，单位是秒数。
-    public  var expires_in : TimeInterval = TimeInterval()
-    //授权用户的UID，
-    public  var uid : Double = Double()
 
-    
-    
-    
-    //单例
+    /// 方法
+    ///单例
     static let sheard = { () -> LJFUserInfo in
- 
-        //  获取文件
+        ///  获取文件
         guard let temp = NSKeyedUnarchiver.unarchiveObject(withFile: LJFUserInfo.getFilePath()) as? LJFUserInfo else {
-            
             let userInfo = LJFUserInfo()
-            
             return userInfo
         }
         return temp
     }()
     
-    // init 私有化
+    /// init 私有化
     private override init() {
         super.init()
     }
     
-    //获取
     
-    
-    //保存
+    ///保存
     class func save() {
        
         let userInfo = LJFUserInfo.sheard
         
-        //3 保存到文件
+        ///3 保存到文件
         let isSave :Bool = NSKeyedArchiver.archiveRootObject(userInfo, toFile: LJFUserInfo.getFilePath())
         
         if isSave == true{
@@ -74,20 +99,22 @@ class LJFUserInfo: NSObject , NSCoding{
     }
     
     
-    //清空
+    ///清空
     func clear() {
         name = String()
-        id = String()
+        id = Int()
         code = String()
         isLogin = false
         
         access_token = String()
         expires_in = TimeInterval()
-        uid = Double()
+        uid = String()
+        
+
     }
     
     
-    //归档
+    ///归档
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name)
         aCoder.encode(id)
@@ -95,67 +122,61 @@ class LJFUserInfo: NSObject , NSCoding{
         aCoder.encode(isLogin, forKey: "isLogin")
         
         aCoder.encode(access_token)
-        aCoder.encode(expires_in)
+        aCoder.encode(expiresData)
         aCoder.encode(uid)
-        
+        aCoder.encode(screen_name)
+        aCoder.encode(avatar_large)
     }
     
-    //解档  会覆盖构造函数
+    ///解档  会覆盖构造函数
     required init?(coder aDecoder: NSCoder) {
-
-        //姓名
-        if let name = aDecoder.decodeObject() {
-            self.name = name as! String
-        }else{
-            self.name = String()
-        }
-        //用户id
-        if let id = aDecoder.decodeObject() {
-            self.id = id as! String
-        }else{
-            self.id = String()
-        }
-        //受权code
-        if let code = aDecoder.decodeObject() {
-            self.code = code as! String
-        }else{
-            self.code = String()
-        } //受权令牌
-        if let isLogin = aDecoder.decodeObject() {
-            self.isLogin = isLogin as! Bool
-        }else{
-            self.isLogin = Bool()
-        }
-        //受权令牌
-        if let access_token = aDecoder.decodeObject() {
-            self.access_token = access_token as! String
-        }else{
-            self.access_token = String()
-        }
-        
-        //有效时间
-        if let expires_in = aDecoder.decodeObject() {
-            self.expires_in = expires_in as! TimeInterval
-        }else{
-            self.expires_in = TimeInterval()
-        }
-        
-        //uid
-        if let uid = aDecoder.decodeObject() {
-            self.uid = uid as! Double
-        }else{
-            self.uid = Double()
-        }
+        ///姓名
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        ///用户id
+        id = aDecoder.decodeObject(forKey: "id") as? Int
+        ///受权code
+        code = aDecoder.decodeObject(forKey: "code") as? String
+        ///受权令牌
+        isLogin = aDecoder.decodeObject(forKey: "isLogin") as? Bool
+        ///受权令牌
+        access_token = aDecoder.decodeObject(forKey: "access_token") as? String
+        ///有效时间
+        expiresData = aDecoder.decodeObject(forKey: "expiresData") as? Date
+        ///uid
+        uid = aDecoder.decodeObject(forKey: "uid") as? String
+        ///呢称
+        screen_name = aDecoder.decodeObject(forKey: "screen_name") as? String
+        /// 头像地址
+        avatar_large = aDecoder.decodeObject(forKey: "avatar_large") as? String
     }
     
-    //获取文件路径
+    /// 字典转模型对象
+    class func userInfoWithDict(dict:[String :Any]) {
+        let  userInfo = sheard;
+        userInfo.setValuesForKeys(dict)
+//        print(userInfo)
+//        return userInfo
+    };
+    
+    /// 重写undefinedKey防止崩溃
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print(key);
+    }
+    
+    ///获取文件路径
     class func getFilePath() -> String {
-        //1 获取文件路径
+        ///1 获取文件路径
         let path :String = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
-        //2 拼接文件名
-        let filePath : String = path + "/" + "userInfo.data"
+        ///2 拼接文件名
+        let filePath : String = path + "/" + "userInfo.plist"
         
         return filePath
     }
+    
+    ///重写 description oc是重写description方法 swift 是重写description属性
+    override var description: String {
+        return dictionaryWithValues(forKeys: ["name","code","access_token","expires_in"]).description
+    }
+    
 }
 

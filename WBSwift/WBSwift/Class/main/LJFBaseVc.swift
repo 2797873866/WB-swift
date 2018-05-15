@@ -51,6 +51,7 @@ class LJFBaseVc: UIViewController {
     
     
     @objc func logAction(notifi:Notification)  {
+        
         if let info = notifi.userInfo!["login"] as? String{
             if info == "1"{
                 VisitorView.isHidden = true;

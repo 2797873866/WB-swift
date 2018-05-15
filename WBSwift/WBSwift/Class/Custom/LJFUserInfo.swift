@@ -10,7 +10,6 @@ import UIKit
 
 @objcMembers
 class LJFUserInfo: NSObject , NSCoding{
-    
     //// 定义的成员变量
     ///友好显示名称
     public   var name : String?

@@ -13,6 +13,8 @@
 		3E1C7F7E1FE127C20032C46A /* conste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1C7F7D1FE127C20032C46A /* conste.swift */; };
 		3E1FC4B61FDE6A7C00747A7F /* LJFPopObjc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */; };
 		3E294ED71FDE762B00E8D406 /* LJFNetTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */; };
+		3E39C66F20AAEE850017A685 /* WeleComeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39C66D20AAEE850017A685 /* WeleComeVC.swift */; };
+		3E39C67020AAEE850017A685 /* WeleComeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E39C66E20AAEE850017A685 /* WeleComeVC.xib */; };
 		3E3BE87B1FD9859300822BFF /* LJFAddVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */; };
 		3E3BE87F1FD985FD00822BFF /* LJFBaseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */; };
 		3E3BE8811FD9862C00822BFF /* LJFTabBarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */; };
@@ -44,6 +46,8 @@
 		3E1C7F7D1FE127C20032C46A /* conste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = conste.swift; sourceTree = "<group>"; };
 		3E1FC4B51FDE6A7C00747A7F /* LJFPopObjc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFPopObjc.swift; sourceTree = "<group>"; };
 		3E294ED61FDE762B00E8D406 /* LJFNetTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFNetTools.swift; sourceTree = "<group>"; };
+		3E39C66D20AAEE850017A685 /* WeleComeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeleComeVC.swift; sourceTree = "<group>"; };
+		3E39C66E20AAEE850017A685 /* WeleComeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeleComeVC.xib; sourceTree = "<group>"; };
 		3E3BE87A1FD9859300822BFF /* LJFAddVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFAddVc.swift; sourceTree = "<group>"; };
 		3E3BE87E1FD985FD00822BFF /* LJFBaseVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFBaseVc.swift; sourceTree = "<group>"; };
 		3E3BE8801FD9862C00822BFF /* LJFTabBarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LJFTabBarVc.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E39C66C20AAED710017A685 /* Welecome */ = {
+			isa = PBXGroup;
+			children = (
+				3E39C66D20AAEE850017A685 /* WeleComeVC.swift */,
+				3E39C66E20AAEE850017A685 /* WeleComeVC.xib */,
+			);
+			path = Welecome;
+			sourceTree = "<group>";
+		};
 		3E3BE87C1FD985D500822BFF /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +179,7 @@
 		3E9311951FD9560900BFFC2E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3E39C66C20AAED710017A685 /* Welecome */,
 				3E3CFC351FDA9B1700B7A923 /* other */,
 				3E9311981FD9565500BFFC2E /* add */,
 				3E93119A1FD9565500BFFC2E /* discover */,
@@ -324,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E93118C1FD9558900BFFC2E /* LaunchScreen.storyboard in Resources */,
+				3E39C67020AAEE850017A685 /* WeleComeVC.xib in Resources */,
 				3E9311891FD9558900BFFC2E /* Assets.xcassets in Resources */,
 				3E15F2D31FDE2C7600DDEA95 /* LJFPopView.xib in Resources */,
 				3E3CFC321FDA76E600B7A923 /* LJFVisitorView.xib in Resources */,
@@ -399,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB0C3091FDFDEBD004E0EA8 /* LJFAuthoriseVc.swift in Sources */,
+				3E39C66F20AAEE850017A685 /* WeleComeVC.swift in Sources */,
 				3EDFAC2D1FDD382E007DE07C /* LJFButton.swift in Sources */,
 				3EB2658B1FEBBAF400FC4BEC /* LJFHttpConst.swift in Sources */,
 				3E3BE8831FD9865500822BFF /* LJFNaVc.swift in Sources */,

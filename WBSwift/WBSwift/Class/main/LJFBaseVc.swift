@@ -27,9 +27,9 @@ class LJFBaseVc: UIViewController {
 
         view.backgroundColor = UIColor.white
         view.addSubview(VisitorView)
-        NotificationCenter.default.addObserver(self, selector: #selector((LJFBaseVc.logAction(notifi:))), name: NSNotification.Name(rawValue: NotificationLoginSuccess), object: "1")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector((LJFBaseVc.logAction(notifi:))), name: NSNotification.Name(rawValue: NotificationLogOut), object: "0")
+        NotificationCenter.default.addObserver(self, selector: #selector(logAction), name: NSNotification.Name(rawValue: NotificationLoginSuccess), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logAction), name: NSNotification.Name(rawValue: NotificationLogOut), object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,11 +43,20 @@ class LJFBaseVc: UIViewController {
         
     }
     
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    
     @objc func logAction(notifi:Notification)  {
-        if let info = notifi.userInfo {
-//            if let infoStr = info as String{
-            print(info)
-//            }
+        if let info = notifi.userInfo!["login"] as? String{
+            if info == "1"{
+                VisitorView.isHidden = true;
+            }else{
+                VisitorView.isHidden = false;
+            }
         }
     }
 }

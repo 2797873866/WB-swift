@@ -22,25 +22,43 @@ class LJFUserInfo: NSObject , NSCoding{
     var isLogin :Bool = Bool(){
         didSet{
             if isLogin {
-                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess))
+                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"1"])
                 /// 登录成功的通知
                 NotificationCenter.default.post(notifi)
             }else{
-                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLogOut))
+                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"0"])
                 /// 退出登录的通知
                 NotificationCenter.default.post(notifi)
             }
         }
     }
+
     
     ///受权相关
     public   var access_token : String?
     ///过期时间
-    public   var expiresData : Date?
+    public   var expiresDate : Date?{
+
+        willSet{
+            
+            
+        }
+        
+        didSet{
+            if (access_token?.count)! > 0{
+                if expiresDate?.compare(Date.init()) == ComparisonResult.orderedDescending{
+                    isLogin = true
+                }else{
+                  isLogin = false
+                }
+            }
+        }
+    }
+    
     ///access_token的生命周期，单位是秒数。
     public   var expires_in : TimeInterval = TimeInterval(){
         didSet  {
-            expiresData = Date(timeIntervalSinceNow: expires_in)
+            expiresDate = Date(timeIntervalSinceNow: expires_in)
         }
     }
     ///授权用户的UID，
@@ -134,7 +152,7 @@ class LJFUserInfo: NSObject , NSCoding{
         aCoder.encode(isLogin, forKey: "isLogin")
         
         aCoder.encode(access_token)
-        aCoder.encode(expiresData)
+        aCoder.encode(expiresDate)
         aCoder.encode(uid)
         aCoder.encode(screen_name)
         aCoder.encode(avatar_large)
@@ -153,7 +171,7 @@ class LJFUserInfo: NSObject , NSCoding{
         ///受权令牌
         access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         ///有效时间
-        expiresData = aDecoder.decodeObject(forKey: "expiresData") as? Date
+        expiresDate = aDecoder.decodeObject(forKey: "expiresDate") as? Date
         ///uid
         uid = aDecoder.decodeObject(forKey: "uid") as? String
         ///呢称

@@ -18,22 +18,20 @@ class LJFUserInfo: NSObject , NSCoding{
     public   var id : Int?
     ///受权code
     public   var code : String?
-//    ///是否登录
-//    var isLogin :Bool = Bool(){
-//        didSet{
-//            if isLogin {
-//                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess))
-//                /// 登录成功的通知
-//                NotificationCenter.default.post(notifi)
-//            }else{
-//                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLogOut))
-//                /// 退出登录的通知
-//                NotificationCenter.default.post(notifi)
-//            }
-//        }
-//    }
-        ///是否登录
-        var isLogin :Bool = true
+    ///是否登录
+    var isLogin :Bool = Bool(){
+        didSet{
+            if isLogin {
+                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess))
+                /// 登录成功的通知
+                NotificationCenter.default.post(notifi)
+            }else{
+                let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLogOut))
+                /// 退出登录的通知
+                NotificationCenter.default.post(notifi)
+            }
+        }
+    }
     
     ///受权相关
     public   var access_token : String?
@@ -147,11 +145,11 @@ class LJFUserInfo: NSObject , NSCoding{
         ///姓名
         name = aDecoder.decodeObject(forKey: "name") as? String
         ///用户id
-        id = aDecoder.decodeInteger(forKey: "id") as? Int
+        id = aDecoder.decodeInteger(forKey: "id")
         ///受权code
         code = aDecoder.decodeObject(forKey: "code") as? String
         ///受权令牌
-        isLogin = (aDecoder.decodeBool(forKey: "isLogin") as? Bool)!
+        isLogin = aDecoder.decodeBool(forKey: "isLogin")
         ///受权令牌
         access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         ///有效时间
@@ -168,8 +166,6 @@ class LJFUserInfo: NSObject , NSCoding{
     class func userInfoWithDict(dict:[String :Any]) {
         let  userInfo = sheard;
         userInfo.setValuesForKeys(dict)
-//        print(userInfo)
-//        return userInfo
     };
     
     /// 重写undefinedKey防止崩溃

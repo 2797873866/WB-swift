@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WeleComeVC: UIViewController {
     /// 头像
@@ -16,8 +17,19 @@ class WeleComeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userIMGUrl = LJFUserInfo.sheard.avatar_large;
-//        userIconIMG.image
+        guard let userIMGUrl = LJFUserInfo.sheard.avatar_large else {
+            return;
+        }
+        /// 用户头象
+        let url = URL(string: userIMGUrl)
+        userIconIMG.sd_setImage(with: url, placeholderImage: nil, options: .allowInvalidSSLCertificates, completed: nil)
+        
+        
+        /// 用户名称
+        guard let userName = LJFUserInfo.sheard.name  else {
+            return
+        }
+        userNameLB.text = userName
 
     }
 

@@ -11,6 +11,11 @@ class LJFTabBarVc: UITabBarController {
     
     lazy var addBtn : UIButton = UIButton(image: "tabbar_compose_button", imageBack: "tabbar_compose_icon_add", targer: self, action: #selector((LJFTabBarVc.selectAddVc)))
     
+    /// 欢迎控制器
+    lazy var welecomeVc: WeleComeVC = {
+        let vc = WeleComeVC(nibName: "WeleComeVC", bundle: nil)
+        return vc
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,7 @@ class LJFTabBarVc: UITabBarController {
         //添加子控制器
         addChild()
         tabBar.tintColor = UIColor.orange
+        NotificationCenter.default.addObserver(self, selector: #selector(logAction), name: NSNotification.Name(rawValue: NotificationLoginSuccess), object: nil)
     }
     
     
@@ -81,6 +87,22 @@ class LJFTabBarVc: UITabBarController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func logAction(notifi:Notification)  {
+        
+        if let info = notifi.userInfo!["login"] as? String{
+            if info == "1"{
+              present(welecomeVc, animated: true, completion: nil)
+                
+                /// 对象弱引用
+                weak var weakSelf = self
+                /// 异步延时
+                DispatchQueue.main.asyncAfter(deadline: .now()+5.0) {
+                    weakSelf?.welecomeVc.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 }

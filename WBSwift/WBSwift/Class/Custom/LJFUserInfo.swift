@@ -23,11 +23,11 @@ class LJFUserInfo: NSObject , NSCoding{
             if isLogin {
                 let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"1"])
                 /// 登录成功的通知
-                NotificationCenter.default.post(notifi)
+                postNotification(notifi: notifi)
             }else{
                 let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"0"])
                 /// 退出登录的通知
-                NotificationCenter.default.post(notifi)
+                postNotification(notifi: notifi)
             }
         }
     }
@@ -104,6 +104,8 @@ class LJFUserInfo: NSObject , NSCoding{
             let userInfo = LJFUserInfo()
             return userInfo
         }
+        let addStr = String(format: "%p",temp)
+        print("temp =" + addStr);
         return temp
     }()
     
@@ -181,8 +183,10 @@ class LJFUserInfo: NSObject , NSCoding{
     
     /// 字典转模型对象
     class func userInfoWithDict(dict:[String :Any]) {
-        let  userInfo = sheard;
-        userInfo.setValuesForKeys(dict)
+        /// 字典转模型
+        LJFUserInfo.sheard.setValuesForKeys(dict)
+        /// 保存沙盒
+        LJFUserInfo.save()
     };
     
     /// 重写undefinedKey防止崩溃
@@ -198,6 +202,13 @@ class LJFUserInfo: NSObject , NSCoding{
         let filePath : String = path + "/" + "userInfo.plist"
         
         return filePath
+    }
+    
+    ///  逆时发通知
+    func postNotification(notifi:Notification) {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+          NotificationCenter.default.post(notifi)
+        }
     }
     
     ///重写 description oc是重写description方法 swift 是重写description属性

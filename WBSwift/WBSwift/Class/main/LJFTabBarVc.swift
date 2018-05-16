@@ -19,7 +19,6 @@ class LJFTabBarVc: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //添加子控制器
         addChild()
         tabBar.tintColor = UIColor.orange
@@ -101,6 +100,7 @@ class LJFTabBarVc: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now()+5.0) {
                     weakSelf?.welecomeVc.dismiss(animated: true, completion: nil)
                 }
+             
             }
         }
     }

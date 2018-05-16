@@ -17,6 +17,7 @@ class WeleComeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         guard let userIMGUrl = LJFUserInfo.sheard.avatar_large else {
             return;
         }
@@ -24,17 +25,14 @@ class WeleComeVC: UIViewController {
         let url = URL(string: userIMGUrl)
         userIconIMG.sd_setImage(with: url, placeholderImage: nil, options: .allowInvalidSSLCertificates, completed: nil)
         
-        
         /// 用户名称
         guard let userName = LJFUserInfo.sheard.name  else {
             return
         }
         userNameLB.text = userName
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
 }

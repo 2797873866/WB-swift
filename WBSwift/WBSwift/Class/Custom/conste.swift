@@ -16,6 +16,9 @@ let appKey = "805904970"
 let returnUrl = "https://test.com"
 //App Secret
 let appSecret = "5ed2b66fccca16e220a5c1dbfd01318f"
+/// 首页
+let homeUrl = "https://api.weibo.com/2/statuses/home_timeline.json"
+
 
 
 

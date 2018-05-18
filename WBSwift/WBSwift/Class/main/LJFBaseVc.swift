@@ -29,7 +29,8 @@ class LJFBaseVc: UIViewController {
         view.addSubview(VisitorView)
         NotificationCenter.default.addObserver(self, selector: #selector(logAction), name: NSNotification.Name(rawValue: NotificationLoginSuccess), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(logAction), name: NSNotification.Name(rawValue: NotificationLogOut), object: nil)
-
+        
+//        VisitorView.isHidden = LJFUserInfo.sheard.isLogin ? true : false
     }
 
     override func didReceiveMemoryWarning() {

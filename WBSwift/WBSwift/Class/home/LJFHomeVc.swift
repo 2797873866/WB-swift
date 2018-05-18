@@ -7,6 +7,7 @@
 //
 import UIKit
 
+
 class LJFHomeVc: LJFBaseVc {
     lazy var titleBtn : LJFButton = {
         
@@ -23,6 +24,7 @@ class LJFHomeVc: LJFBaseVc {
         super.viewDidLoad()
         
         addChild()
+        loadData()
     }
 
     
@@ -35,14 +37,25 @@ class LJFHomeVc: LJFBaseVc {
 
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-////        let notifi = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess))
-//        let notifi = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: self, userInfo: ["":""])
-//        NotificationCenter.default.post(notifi)
-//        print(notifi)
-//    }
+    func loadData()  {
+//        let userInfo = LJFUserInfo.sheard
+//        let access_token = LJFUserInfo.sheard.access_token!
+//        let param:[String:Any] = ["access_token":access_token,]
+//        LJFNetTools.get(url: homeUrl, parm: param, { objc in
+//            print(objc)
+//        }) { (error) in
+//            print(error)
+//        }
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        let userInfo = LJFUserInfo.sheard
+        LJFUserInfo.save()
 
+        print (userInfo);
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

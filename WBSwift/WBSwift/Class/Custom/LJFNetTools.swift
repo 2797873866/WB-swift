@@ -48,7 +48,8 @@ import AFNetworking
     }
     
     //共用请求方法
-    func request(typ:requestType, url:String,parm:[String:Any]?, result:@escaping (AnyObject?) ->(), error:@escaping (AnyObject?) -> ()) {
+ 
+   private func request(typ:requestType, url:String,parm:[String:Any]?, result:@escaping (AnyObject?) ->(), error:@escaping (AnyObject?) -> ()) {
         
         if typ == requestType.GET {
             if parm == nil{
@@ -59,11 +60,9 @@ import AFNetworking
             manager.get(url, parameters: parm!, progress: { (progre) in
                 
             }, success: { (task, Resutl) in
-                
-                result(Resutl as AnyObject)
+                LJFNetTools.dispatchAction(result: result, param: Resutl as AnyObject)
             }) { (task, Error) in
-              
-                error(Error as AnyObject)
+                LJFNetTools.dispatchAction(result: error, param: Error as AnyObject)
             }
             
         } else if typ == requestType.POST{
@@ -77,11 +76,12 @@ import AFNetworking
             }, success: { (task, tempResult) in
                 
                 if tempResult != nil{
-                    result(tempResult as AnyObject)
+                    LJFNetTools.dispatchAction(result: result, param: tempResult as AnyObject)
                 }
             }) { (task, tempError) in
-                    error(tempError as AnyObject)
+                    LJFNetTools.dispatchAction(result: error, param: tempError as AnyObject)
             }
+            
             
         }else{
             //postFile方法
@@ -94,11 +94,17 @@ import AFNetworking
             }) { (response, tempresult, temperror) in
                 //回调
                 if tempresult != nil{
-                    result(result as AnyObject)
+                    LJFNetTools.dispatchAction(result: result, param: tempresult as AnyObject)
                 }else{
-                    error(temperror as AnyObject)
+                    LJFNetTools.dispatchAction(result: error, param: temperror as AnyObject)
                 }
             }
+        }
+    }
+    
+    class func dispatchAction(result:@escaping (AnyObject?) ->(),param:AnyObject?) {
+        DispatchQueue.main.async {
+            result(param)
         }
     }
 }

@@ -11,12 +11,6 @@ class LJFTabBarVc: UITabBarController {
     
     lazy var addBtn : UIButton = UIButton(image: "tabbar_compose_button", imageBack: "tabbar_compose_icon_add", targer: self, action: #selector((LJFTabBarVc.selectAddVc)))
     
-    /// 欢迎控制器
-    lazy var welecomeVc: WeleComeVC = {
-        let vc = WeleComeVC(nibName: "WeleComeVC", bundle: nil)
-        return vc
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //添加子控制器
@@ -92,15 +86,7 @@ class LJFTabBarVc: UITabBarController {
         
         if let info = notifi.userInfo!["login"] as? String{
             if info == "1"{
-              present(welecomeVc, animated: true, completion: nil)
-                
-                /// 对象弱引用
-                weak var weakSelf = self
-                /// 异步延时
-                DispatchQueue.main.asyncAfter(deadline: .now()+5.0) {
-                    weakSelf?.welecomeVc.dismiss(animated: true, completion: nil)
-                }
-             
+                WeleComeView.createView()
             }
         }
     }

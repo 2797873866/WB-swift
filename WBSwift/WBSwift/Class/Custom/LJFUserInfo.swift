@@ -19,9 +19,10 @@ class LJFUserInfo: NSObject , NSCoding{
     ///受权code
     public   var code : String?
     ///是否登录
-    var isLogin :Bool = Bool(){
-        didSet{
-            if isLogin {
+    var isLogin :Bool{
+        
+        set{
+            if newValue {
                 let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"1"])
                 /// 登录成功的通知
                 postNotification(notifi: notifi)
@@ -29,6 +30,17 @@ class LJFUserInfo: NSObject , NSCoding{
                 let notifi: Notification = Notification(name: Notification.Name(rawValue: NotificationLoginSuccess), object: nil, userInfo: ["login":"0"])
                 /// 退出登录的通知
                 postNotification(notifi: notifi)
+            }
+        }
+
+        
+        get{
+            let result = expiresDate?.compare(Date())
+            if ((access_token?.count)! > 0 && result == .orderedDescending)
+            {
+                return true
+            }else{
+                return false
             }
         }
     }
@@ -78,13 +90,13 @@ class LJFUserInfo: NSObject , NSCoding{
         
         /// filePath
         let filePath = LJFUserInfo.getFilePath()
-        
+        let userInfo = NSKeyedUnarchiver.unarchiveObject(withFile:filePath)
         ///  获取文件
-        guard let userInfo = NSKeyedUnarchiver.unarchiveObject(withFile:filePath) as? LJFUserInfo else {
+        guard  ((userInfo as? LJFUserInfo) != nil) else {
             let userInfo = LJFUserInfo()
             return userInfo
         }
-        return userInfo
+        return userInfo as! LJFUserInfo
     }()
     
     /// init 私有化
@@ -140,10 +152,10 @@ class LJFUserInfo: NSObject , NSCoding{
     
     ///解档  会覆盖构造函数
     required init?(coder aDecoder: NSCoder) {
+        super.init()
         ///姓名
         name = aDecoder.decodeObject(forKey: "name") as! String?
         ///用户id
-//        id = aDecoder.decodeObject(forKey:"id")as?Int
         id = aDecoder.decodeInteger(forKey: "id")
         ///受权code
         code = aDecoder.decodeObject(forKey: "code") as! String?

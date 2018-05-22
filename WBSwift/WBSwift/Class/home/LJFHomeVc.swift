@@ -38,14 +38,14 @@ class LJFHomeVc: LJFBaseVc {
     }
     
     func loadData()  {
-//        let userInfo = LJFUserInfo.sheard
-//        let access_token = LJFUserInfo.sheard.access_token!
-//        let param:[String:Any] = ["access_token":access_token,]
-//        LJFNetTools.get(url: homeUrl, parm: param, { objc in
-//            print(objc)
-//        }) { (error) in
-//            print(error)
-//        }
+
+        let access_token = LJFUserInfo.sheard.access_token!
+        let param:[String:Any] = ["access_token":access_token,]
+        LJFNetTools.get(url: homeUrl, parm: param, { objc in
+            print(objc)
+        }) { (error) in
+            print(error)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
